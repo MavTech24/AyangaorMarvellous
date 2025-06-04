@@ -1,0 +1,422 @@
+   :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --radius: 8px;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.5;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    section {
+      padding: var(--space-xl) 0;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3 {
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.5rem; }
+    }
+
+    /* ===== COMPONENTS ===== */
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--card-bg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 100px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-title {
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero-subtitle {
+      color: var(--text-light);
+      margin-bottom: var(--space-md);
+      font-size: 1.25rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-sm);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-image {
+      height: 200px;
+      background-color: #eee;
+    }
+
+    .project-content {
+      padding: var(--space-md);
+    }
+
+    .project-title {
+      margin-bottom: var(--space-xs);
+    }
+
+    .project-description {
+      color: var(--text-light);
+      margin-bottom: var(--space-sm);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-sm);
+    }
+
+    .tech-tag {
+      background-color: #eff6ff;
+      color: var(--primary);
+      padding: 0.25rem 0.5rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .skill-category {
+      background-color: var(--card-bg);
+      padding: var(--space-md);
+      border-radius: var(--radius);
+    }
+
+    .skill-category h3 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .skill-item {
+      margin-bottom: var(--space-sm);
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--space-xs);
+    }
+
+    .skill-bar {
+      height: 6px;
+      background-color: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .skill-level {
+      height: 100%;
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+
+    /* Experience */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50px;
+      height: 100%;
+      width: 2px;
+      background: var(--primary);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: var(--space-xl);
+    }
+
+    .timeline-date {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 70px;
+      text-align: right;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .timeline-content {
+      background-color: var(--card-bg);
+      padding: var(--space-md);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .timeline-content h3 {
+      margin-bottom: var(--space-xs);
+    }
+
+    .company {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: var(--space-sm);
+    }
+
+    .timeline-details {
+      list-style-position: inside;
+    }
+
+    .timeline-details li {
+      margin-bottom: var(--space-xs);
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: var(--space-xs);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--text);
+      color: white;
+      padding: var(--space-md) 0;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      margin: var(--space-md) 0;
+    }
+
+    .social-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* ===== MOBILE STYLES ===== */
+    @media (max-width: 768px) {
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: var(--space-md);
+        gap: var(--space-sm);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+      }
+
+      .nav.active {
+        transform: translateY(0);
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .timeline::before {
+        left: 30px;
+      }
+
+      .timeline-item {
+        padding-left: 60px;
+      }
+
+      .timeline-date {
+        width: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: var(--space-lg) 0;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
